@@ -1,2 +1,2 @@
-- unless @post.body == nil
-  %pre= @post.body.gsub(",", ",<br />")
+- @post.attributes.each do |attr|
+  %pre= attr
