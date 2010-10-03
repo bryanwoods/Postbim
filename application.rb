@@ -32,6 +32,10 @@ end
 class Post < ActiveRecord::Base
   validates_presence_of :title
   validates_uniqueness_of :title
+
+  def method_missing(*args)
+    args
+  end
 end
 
 get '/' do
@@ -53,12 +57,14 @@ get '/:title' do
 end
 
 post '/:title' do
+  @post = Post.find_by_title(params[:title])
+
   params.each do |key, value|
-    puts "#{key} is: #{value}"
+    p @post.key = value
   end
 
-  @post = Post.find_by_title(params[:title])
   @post.body = params
+
   if @post.save
     status 201
     "Created: #{@post.title}"
