@@ -47,11 +47,8 @@ post '/create' do
 end
 
 get '/:title' do
-  if @post.nil?
-    "No pingbacks received yet."
-  else
-    "<pre>#{@post.inspect}</pre>"
-  end
+  @post.title
+  @post.body
 end
 
 post '/:title' do
