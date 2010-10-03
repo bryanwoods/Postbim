@@ -15,7 +15,12 @@ configure do
   API_KEY = Pusher.key
   SECRET = Pusher.secret
 
-  set :database, 'sqlite://postbim.db'
+  APP_ENVIRONMENT = Sinatra::Application.environment
+
+  if APP_ENVIRONMENT == :development
+    set :database, 'sqlite://postbim.db'
+  end
+
 end
 
 helpers do

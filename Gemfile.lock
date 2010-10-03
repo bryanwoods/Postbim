@@ -22,7 +22,6 @@ GEM
       rack (>= 1.0)
     sinatra-activerecord (0.1.2)
       sinatra (>= 0.9.4)
-    sqlite3-ruby (1.2.5)
 
 PLATFORMS
   ruby
@@ -34,4 +33,3 @@ DEPENDENCIES
   rack-flash
   sinatra (= 1.0)
   sinatra-activerecord
-  sqlite3-ruby
