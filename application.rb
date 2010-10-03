@@ -47,6 +47,7 @@ post '/create' do
 end
 
 get '/:title' do
+  @post = Post.find_by_title(params[:title])
   @post.title
   @post.body
 end
