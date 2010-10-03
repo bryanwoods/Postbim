@@ -1,1 +1,2 @@
-%pre= @post.body.gsub(",", ",<br />")
+- unless @post.body == nil
+  %pre= @post.body.gsub(",", ",<br />")
