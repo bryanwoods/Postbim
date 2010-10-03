@@ -1,32 +1,15 @@
 require 'rubygems'
 require 'sinatra'
-require 'pusher'
 require 'haml'
 require 'sinatra/activerecord'
-require 'rack-flash'
 require 'digest/sha1'
-require 'pp'
 
 configure do
-  Pusher.app_id = '1786'
-  Pusher.key = '09435da909450e9b4b6e'
-  Pusher.secret = '6112f12f27007eaab27d'
-
-  APP_ID = Pusher.app_id
-  API_KEY = Pusher.key
-  SECRET = Pusher.secret
-
   APP_ENVIRONMENT = Sinatra::Application.environment
 
   if APP_ENVIRONMENT == :development
     set :database, 'sqlite://postbim.db'
   end
-
-end
-
-helpers do
-  include Rack::Utils
-  alias_method :h, :escape_html
 end
 
 class Post < ActiveRecord::Base
