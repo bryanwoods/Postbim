@@ -1,0 +1,31 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    crack (0.1.8)
+    haml (3.0.18)
+    json (1.4.6)
+    pusher (0.6.0)
+      crack
+      json
+      ruby-hmac
+      signature
+    rack (1.2.1)
+    rack-flash (0.1.1)
+      rack
+    ruby-hmac (0.3.2)
+    signature (0.1.1)
+      ruby-hmac
+    sinatra (1.0)
+      rack (>= 1.0)
+    sinatra-activerecord (0.1.2)
+      sinatra (>= 0.9.4)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  pusher
+  rack-flash
+  sinatra (= 1.0)
+  sinatra-activerecord
