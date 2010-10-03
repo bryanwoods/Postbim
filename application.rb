@@ -48,8 +48,8 @@ end
 
 get '/:title' do
   @post = Post.find_by_title(params[:title])
-  @post.title
-  @post.body
+  "<pre>#{@post.title}</pre>"
+  "<pre>#{@post.body}</pre>"
 end
 
 post '/:title' do
