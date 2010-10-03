@@ -53,6 +53,7 @@ get '/:title' do
 end
 
 post '/:title' do
+  puts params.inspect
   @post = Post.find_by_title(params[:title])
   @post.body = params
   if @post.save
