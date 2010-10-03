@@ -48,8 +48,7 @@ end
 
 get '/:title' do
   @post = Post.find_by_title(params[:title])
-  "<pre>#{@post.title}</pre>"
-  "<pre>#{@post.body}</pre>"
+  haml :show
 end
 
 post '/:title' do
