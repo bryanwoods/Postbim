@@ -1,2 +1,2 @@
-- @post.attributes.each do |attribute|
-  %pre= attribute
+- @post.attributes.each do |key, value|
+  = "<b>#{key}:</b><pre>#{value}</pre>"
