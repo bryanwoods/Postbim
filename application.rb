@@ -47,6 +47,22 @@ post '/create' do
 end
 
 get '/:title' do
-  "You are viewing Post: #{params[:title]}"
+  if @post.nil?
+    "No pingbacks received yet."
+  else
+    "<pre>#{@post.inspect}</pre>"
+  end
+end
+
+post '/:title' do
+  @post = Post.find_by_title(params[:title])
+  @post.body = params
+  if @post.save
+    status 201
+    "Created: #{@post.title}"
+  else
+    status 400
+    "Error: Bad request."
+  end
 end
 
