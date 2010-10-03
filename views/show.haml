@@ -1,2 +1,7 @@
-- @post.attributes.each do |attr|
-  %pre= attr
+- @post.attributes.each do |attribute|
+  - attribute.each do |key, value|
+    %pre
+      %p
+        %b= key
+        %br/
+        = value
