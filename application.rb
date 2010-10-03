@@ -5,6 +5,7 @@ require 'haml'
 require 'sinatra/activerecord'
 require 'rack-flash'
 require 'digest/sha1'
+require 'pp'
 
 configure do
   Pusher.app_id = '1786'
